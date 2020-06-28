@@ -1,4 +1,6 @@
 class Room < ApplicationRecord
+    # 子クラス：Entry
+    has_many :entries, dependent: :destroy
     # コールバック]
     before_validation :remove_space_and_put_
 
