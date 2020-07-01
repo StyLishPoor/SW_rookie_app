@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :entries, only: [:new, :create, :destroy, :index], path: :rentals do
     post :confirm, on: :collection
   end
+  resources :people
   root to: 'top#index'
   get 'top/index'
   

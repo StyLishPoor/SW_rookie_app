@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>利用者</th>
+            <th>メール</th> 
+            <th>予約日</th> 
+            <th>利用時間</th> 
+            <th>人数</th>
+        </tr>
+  </thead>
+  <tbody>
+    <% @room.entries.each do |entry| %> 
+        <tr>
+            <td><%= entry.user_name %></td> 
+            <td><%= entry.user_email %></td>
+            <td><%= entry.reserved_date %></td> 
+            <td><%= entry.usage_time %></td> 
+            <td><%= entry.people %></td>
+            <td><%= link_to '予約解除', entry, method: :delete,
+                    data: {confirm: '本当に解除しますか？'} %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
